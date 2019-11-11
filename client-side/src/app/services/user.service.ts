@@ -66,6 +66,11 @@ export class UserService {
   {headers: {"Content-Type":"application/json; charset=UTF-8"}});
   }
 
+  getAllDiscussions(): Observable<any> {
+    return this.http.get(API_URL + "discussions",
+      {headers: {"Content-Type":"application/json; charset=UTF-8"}});
+  }
+
   findAllCourses(): Observable<any> {
     return this.http.get(API_URL + "courses",
   {headers: {"Content-Type":"application/json; charset=UTF-8"}});

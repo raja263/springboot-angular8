@@ -1,8 +1,11 @@
 package com.sha.serverside.controller;
 
+import com.sha.serverside.model.Discussions;
 import com.sha.serverside.model.Course;
 import com.sha.serverside.model.CourseStudent;
+import com.sha.serverside.service.CourseService;
 import com.sha.serverside.service.CourseStudentService;
+import com.sha.serverside.service.DiscussionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +20,12 @@ public class StudentController {
     @Autowired
     private CourseStudentService courseStudentService;
 
+    @Autowired
+    private DiscussionService discussionStudentService;
+
+    @Autowired
+     private CourseService courseService;
+
     @GetMapping("/api/student/courses/{studentId}")
     public ResponseEntity<?> findAllCoursesOfStudent(@PathVariable Long studentId){
         List<Course> courseList =
@@ -25,6 +34,13 @@ public class StudentController {
                         .collect(Collectors.toList());
         return new ResponseEntity<>(courseList, HttpStatus.OK);
     }
+
+    @GetMapping("/api/user/discussions")
+    public ResponseEntity<?> getAllDiscussions(){
+            List<Discussions> discussionsList =
+                    discussionStudentService.getAllDiscussions();
+            return new ResponseEntity<>(discussionsList, HttpStatus.OK);
+        }
 
     @PostMapping("/api/student/enroll")
     public ResponseEntity<?> enroll(@RequestBody CourseStudent courseStudent){

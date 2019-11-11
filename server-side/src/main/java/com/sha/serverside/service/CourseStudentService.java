@@ -12,4 +12,8 @@ public interface CourseStudentService {
     List<CourseStudent> findAllStudentsOfInstructor(Long instructorId);
 
     List<CourseStudent> findAllEnrollments();
+
+    List<CourseStudent> getAllDiscussions();
+
+
 }

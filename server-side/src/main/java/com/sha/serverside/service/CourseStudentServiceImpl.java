@@ -34,4 +34,9 @@ public class CourseStudentServiceImpl implements CourseStudentService {
     public List<CourseStudent> findAllEnrollments(){
         return courseStudentRepository.findAll();
     }
+
+    @Override
+    public List<CourseStudent> getAllDiscussions() {
+        return null;
+    }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../../models/user";
 import {Course} from "../../../models/course";
+import {Discussions} from "../../../models/discussions";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from '../../../services/user.service';
 
@@ -14,6 +15,7 @@ export class StudentComponent implements OnInit {
   studentId: string;
   currentStudent: User;
   courseList: Array<Course>;
+  discussionList: Array<Discussions>;
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
     this.currentStudent = JSON.parse(localStorage.getItem("currentUser"));
@@ -26,11 +28,17 @@ export class StudentComponent implements OnInit {
       }
 
       if(this.studentId || this.currentStudent) {
-        this.findAllCoursesOfStudent();
+        this.getAllDiscussions();
       }
     });
   }
 
+  getAllDiscussions(){
+    this.userService.getAllDiscussions().subscribe(data => {
+      this.discussionList = data;
+    });
+  }
+/*
   findAllCoursesOfStudent(){
     if(!this.studentId){
       this.studentId = this.currentStudent.id.toString();
@@ -39,5 +47,5 @@ export class StudentComponent implements OnInit {
       this.courseList = data;
     });
   }
-
+*/
 }
