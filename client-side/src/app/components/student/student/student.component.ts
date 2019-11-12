@@ -4,6 +4,7 @@ import {Course} from "../../../models/course";
 import {Discussions} from "../../../models/discussions";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from '../../../services/user.service';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-student',
