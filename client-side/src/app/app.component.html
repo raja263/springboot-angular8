@@ -4,14 +4,21 @@
     Angular
   </a>
   <div class="navbar-nav mr-auto">
+
     <li class="nav-item">
       <a href="/home" class="nav-link">Home</a>
     </li>
+
     <li class="nav-item">
       <a href="/student/{{currentUser.id}}" class="nav-link" *ngIf="isStudent">Discussions-X</a>
       <a href="/teacher" class="nav-link" *ngIf="isTeacher">Teacher Panel</a>
       <a href="/manager" class="nav-link" *ngIf="isManager">Manager Panel</a>
     </li>
+
+    <li class="nav-item">
+      <a href="/home" class="nav-link">Discussions-Alpha</a>
+    </li>
+
   </div>
   <div class="navbar-nav ml-auto" *ngIf="!currentUser">
     <li class="nav-item">
