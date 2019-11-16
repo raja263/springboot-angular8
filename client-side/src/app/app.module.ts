@@ -8,7 +8,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { HomeComponent } from './components/user/home/home.component';
 import { StudentComponent } from './components/student/student/student.component';
-import { DiscussionComponent } from './components/student/discussion/discussion.component';
+import { DiscussionComponent } from './components/user/discussion/discussion.component';
 import { TeacherComponent } from './components/teacher/teacher/teacher.component';
 import { ManagerComponent } from './components/manager/manager/manager.component';
 import { NotFoundComponent } from './components/error/not-found/not-found.component';
@@ -16,6 +16,7 @@ import { UnathorizedComponent } from './components/error/unathorized/unathorized
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DiscussionhomeComponent } from './components/user/discussionhome/discussionhome.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     TeacherComponent,
     ManagerComponent,
     NotFoundComponent,
-    UnathorizedComponent
+    UnathorizedComponent,
+    DiscussionhomeComponent
   ],
   imports: [
     BrowserModule,

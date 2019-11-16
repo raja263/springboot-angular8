@@ -1,0 +1,39 @@
+<div class="container">
+<br>
+  <div class="course-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col col-xs-6">
+            <h4 class="panel-title"><b>Discussions</b></h4>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Topic</th>
+            <th scope="col">Posted By</th>
+            <th scope="col">Posted On</th>
+            <th scope="col"> </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of discussionList;  index as ind">
+            <th scope="row">{{ind+1}}</th>
+            <td>{{item.title}}</td>
+            <td>{{item.userID}}</td>
+            <td>{{item.timestamp}}</td>
+            <td><a routerLink="/discussion/{{item.discussionID}}" routerLinkActive="active"><button>Open {{item.discussionID}}</button></a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

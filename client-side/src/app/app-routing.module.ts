@@ -12,7 +12,8 @@ import {UnathorizedComponent} from './components/error/unathorized/unathorized.c
 
 import {AuthGuard} from './guards/auth.guard';
 import {Role} from './models/role';
-import {DiscussionComponent} from './components/student/discussion/discussion.component';
+import {DiscussionComponent} from './components/user/discussion/discussion.component';
+import {DiscussionhomeComponent} from './components/user/discussionhome/discussionhome.component';
 
 const routes: Routes = [
   //public pages
@@ -32,8 +33,11 @@ const routes: Routes = [
   canActivate: [AuthGuard],
   data: {roles: [Role.STUDENT]}
   },
-  {path:'discussion',
+  {path:'discussion/:id',
   component: DiscussionComponent
+  },
+  {path:'discussionhome',
+    component: DiscussionhomeComponent
   },
   {path:'teacher',
   component: TeacherComponent,
