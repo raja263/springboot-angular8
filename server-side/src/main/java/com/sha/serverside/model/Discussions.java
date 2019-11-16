@@ -12,13 +12,13 @@ public class Discussions implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int discussionID;
+    private Long discussionID;
 
     //@Column(name="discussionID")
     //private int discussionID;
 
     @Column(name="userID")
-    private int userID;
+    private Long userID;
 
     @Column(name="title")
     private String title;

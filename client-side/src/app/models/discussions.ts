@@ -1,9 +1,9 @@
 import {User} from './user';
 export class Discussions {
-  id: number;
+  discussionID: number;
   title: string="";
   body: string="";
-  date: string="";
+  timestamp: string="";
   userID: string="";
 
   //instructor: User;

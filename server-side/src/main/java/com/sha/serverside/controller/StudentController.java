@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -41,6 +42,13 @@ public class StudentController {
                     discussionStudentService.getAllDiscussions();
             return new ResponseEntity<>(discussionsList, HttpStatus.OK);
         }
+
+    @GetMapping("/api/user/discussions/{discId}")
+    public ResponseEntity<?> getDiscussionById(@PathVariable Long discId){
+        Discussions discussion =
+                discussionStudentService.findByDiscussionID(discId);
+        return new ResponseEntity<>(discussion, HttpStatus.OK);
+    }
 
     @PostMapping("/api/student/enroll")
     public ResponseEntity<?> enroll(@RequestBody CourseStudent courseStudent){

@@ -6,17 +6,12 @@
   <hr>
   <br>
 
-  <!-- <h5>{{title}}</h5> -->
-  <h5>THIS IS A RANDOM TITLE FOR TESTING PURPOSES.</h5>
-
-
+  <h5>{{discussionContent.title}}</h5>
   <br>
-
-  <!--  <p style="border:1px; border-style:solid; border-color:#cfcfcf; padding: 1em;">{{body}}</p> -->
-  <p style="border:1px; border-style:solid; border-color:#cfcfcf; padding: 1em;">THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.THIS IS A RANDOM CONTENT FOR TESTING PURPOSES.</p>
-
-  <!-- posted by {{user.id}} on {{timestamp}} -->
-  posted by XYZ on MM:DD:YY
+ <p style="border:1px; border-style:solid; border-color:#cfcfcf; padding: 1em;">{{discussionContent.body}}</p>
+ posted by {{discussionContent.userID}}
+  <br>
+  On {{discussionContent.timestamp}}
 
 
   <hr>
@@ -43,6 +38,7 @@
         </tr>
         </thead>
         <tbody>
+        <!--
         <tr *ngFor="let item of commentsList;  index as ind">
           <th scope="row">{{ind+1}}</th>
           <td>{{item.title}}</td>
@@ -51,6 +47,7 @@
           <td><a routerLink="/discussion" routerLinkActive="active"><button>Open</button></a></td>
         </tr>
         </tbody>
+        -->
       </table>
     </div>
 

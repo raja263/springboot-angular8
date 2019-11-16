@@ -4,6 +4,7 @@ import {Course} from "../../../models/course";
 import {Discussions} from "../../../models/discussions";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from '../../../services/user.service';
+// --------------------------------------------------------------------------------------------------------------------- DISCUSSION HOMEPAGE
 
 @Component({
   selector: 'app-discussionhome',
@@ -29,6 +30,8 @@ export class DiscussionhomeComponent implements OnInit {
       }
     });
   }
+
+
   getAllDiscussions(){
     this.userService.getAllDiscussions().subscribe(data => {
       this.discussionList = data;

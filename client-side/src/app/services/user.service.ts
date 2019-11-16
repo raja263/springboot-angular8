@@ -85,4 +85,9 @@ export class UserService {
     this.setHeaders();
     return this.http.post(STUDENT_API_URL + "enroll", JSON.stringify(courseStudent), {headers: this.headers});
   }
+
+  findByDiscussionID(discussionID: any) {
+    this.setHeaders();
+    return this.http.get(API_URL + "discussions/"+discussionID, {headers: this.headers});
+  }
 }
