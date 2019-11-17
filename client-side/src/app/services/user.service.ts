@@ -90,4 +90,9 @@ export class UserService {
     this.setHeaders();
     return this.http.get(API_URL + "discussions/"+discussionID, {headers: this.headers});
   }
+
+  findCommentsByDiscussionID(discussionID: any) {
+    this.setHeaders();
+    return this.http.get(API_URL + "discussions/comments/"+discussionID, {headers: this.headers});
+  }
 }

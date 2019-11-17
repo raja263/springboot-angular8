@@ -14,6 +14,7 @@ export class DiscussionComponent implements OnInit {
 
   currentStudent: User;
   discussionContent: any;
+  commentContent: any;
   currentDiscussion: Discussions;
   private discussionID: string;
 
@@ -30,6 +31,7 @@ export class DiscussionComponent implements OnInit {
 
       if(this.discussionID || true) {
         this.getDiscussion();
+        this.getComments();
       }
     });
   }
@@ -43,5 +45,10 @@ export class DiscussionComponent implements OnInit {
     });
   }
 
+  private getComments() {
+    this.userService.findCommentsByDiscussionID(this.discussionID).subscribe(data => {
+      this.commentContent = data;
+    });
+  }
 }
 

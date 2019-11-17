@@ -1,8 +1,6 @@
 package com.sha.serverside.controller;
 
-import com.sha.serverside.model.Discussions;
-import com.sha.serverside.model.Course;
-import com.sha.serverside.model.CourseStudent;
+import com.sha.serverside.model.*;
 import com.sha.serverside.service.CourseService;
 import com.sha.serverside.service.CourseStudentService;
 import com.sha.serverside.service.DiscussionService;
@@ -48,6 +46,14 @@ public class StudentController {
         Discussions discussion =
                 discussionStudentService.findByDiscussionID(discId);
         return new ResponseEntity<>(discussion, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/api/user/discussions/comments/{discId}")
+    public ResponseEntity<?> getAllComments(@PathVariable Long discId){
+        List<Comments> commentsList =
+                discussionStudentService.findAllCommentsByDiscussionID(discId);
+        return new ResponseEntity<>(commentsList, HttpStatus.OK);
     }
 
     @PostMapping("/api/student/enroll")
