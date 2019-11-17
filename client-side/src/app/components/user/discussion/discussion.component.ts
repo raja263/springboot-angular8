@@ -13,9 +13,10 @@ import {UserService} from '../../../services/user.service';
 export class DiscussionComponent implements OnInit {
 
   currentStudent: User;
-  discussionContent: Discussions;
+  discussionContent: any;
   currentDiscussion: Discussions;
-  findByDiscussionID
+  private discussionID: string;
+
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
     this.currentStudent = JSON.parse(localStorage.getItem("currentUser"));

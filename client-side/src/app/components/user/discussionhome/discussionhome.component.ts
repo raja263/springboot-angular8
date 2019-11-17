@@ -15,6 +15,7 @@ export class DiscussionhomeComponent implements OnInit {
 
   discussionList: Array<Discussions>;
   currentStudent: User;
+  private studentId: string;
   constructor(private route: ActivatedRoute, private userService: UserService) {
     this.currentStudent = JSON.parse(localStorage.getItem("currentUser"));
   }
