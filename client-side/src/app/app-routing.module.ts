@@ -10,10 +10,11 @@ import {ManagerComponent} from './components/manager/manager/manager.component';
 import {NotFoundComponent} from './components/error/not-found/not-found.component';
 import {UnathorizedComponent} from './components/error/unathorized/unathorized.component';
 
-import {AuthGuard} from './guards/auth.guard';
+import {AuthGuard} from './components/user/guards/auth.guard';
 import {Role} from './models/role';
 import {DiscussionComponent} from './components/user/discussion/discussion.component';
 import {DiscussionhomeComponent} from './components/user/discussionhome/discussionhome.component';
+import {DiscussionpostComponent} from './components/user/discussionpost/discussionpost.component';
 
 const routes: Routes = [
   //public pages
@@ -38,6 +39,9 @@ const routes: Routes = [
   },
   {path:'discussionhome',
     component: DiscussionhomeComponent
+  },
+  {path:'discussionpost',
+    component: DiscussionpostComponent
   },
   {path:'teacher',
   component: TeacherComponent,

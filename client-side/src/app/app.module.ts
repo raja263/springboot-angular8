@@ -17,6 +17,7 @@ import { UnathorizedComponent } from './components/error/unathorized/unathorized
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DiscussionhomeComponent } from './components/user/discussionhome/discussionhome.component';
+import { DiscussionpostComponent } from './components/user/discussionpost/discussionpost.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DiscussionhomeComponent } from './components/user/discussionhome/discus
     ManagerComponent,
     NotFoundComponent,
     UnathorizedComponent,
-    DiscussionhomeComponent
+    DiscussionhomeComponent,
+    DiscussionpostComponent
   ],
   imports: [
     BrowserModule,
