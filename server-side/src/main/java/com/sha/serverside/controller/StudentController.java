@@ -34,6 +34,11 @@ public class StudentController {
         return new ResponseEntity<>(courseList, HttpStatus.OK);
     }
 
+    @PostMapping("/api/user/discussionpost/")
+    public ResponseEntity<?> submitDiscussion(@RequestBody Discussions discussion){
+        return new ResponseEntity<>(discussionStudentService.saveDiscussion(discussion), HttpStatus.CREATED);
+    }
+
     @GetMapping("/api/user/discussions")
     public ResponseEntity<?> getAllDiscussions(){
             List<Discussions> discussionsList =

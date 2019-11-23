@@ -1,3 +1,17 @@
+<script>
+    function TimeCtrl($scope, $timeout) {
+        $scope.clock = "loading clock..."; // initialise the time variable
+        $scope.tickInterval = 1000 //ms
+
+        var tick = function() {
+            $scope.clock = Date.now() // get the current time
+            $timeout(tick, $scope.tickInterval); // reset the timer
+        }
+
+        // Start the timer
+        $timeout(tick, $scope.tickInterval);
+    }
+</script>
 <div class="container">
   <br>
   <div class="course-container">
@@ -9,21 +23,23 @@
               <a routerLink="/discussionhome" routerLinkActive="active"><button  style="float: right;">X</button></a>
             </h4>
           </div>
-
-
         </div>
       </div>
     </div>
 
 
-    <form>
-      <input type="text" name="commentInput" placeholder="Title" />
-      <br>
-      <input type="text" name="commentInput" placeholder="Discussion content" />
-
+    <form name="form-signup" (ngSubmit)="f.form.valid && submitDiscussion()" #f="ngForm" novalidate >
+      <input type="text" placeholder="Title" class="form-control" name="title" id="title" [(ngModel)]="discussion.title" #title="ngModel" required />
+      <div class="alert alert-danger" *ngIf="f.submitted && !title.valid">
+        Title is required.
+      </div>
+      <input type="text"  placeholder="Discussion content" class="form-control" name="body" id="body" [(ngModel)]="discussion.body" #body="ngModel" required />
+      <div class="alert alert-danger" *ngIf="f.submitted && !body.valid">
+        Discussion cannot be empty.
+      </div>
+      <button  type="submit" class="btn btn-lg btn-primary btn-block btn-signin form-submit-button">Submit</button>
     </form>
-
-    <button  style="float: right; background-color: #a3ecff; ">Submit</button>
+    <hr>
 
   </div>
 </div>

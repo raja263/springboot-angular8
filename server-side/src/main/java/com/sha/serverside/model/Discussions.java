@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -27,7 +29,7 @@ public class Discussions implements Serializable {
     private String body;
 
     @Column(name="timestamp")
-    private String timestamp;
+    private Timestamp timestamp;
 
     //@ManyToOne(fetch = FetchType.EAGER)
     //@JoinColumn(name="instructor_id", referencedColumnName = "id")

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,5 +30,19 @@ public class DiscussionServiceImpl implements DiscussionService{
     @Override
     public List<Comments> findAllCommentsByDiscussionID(Long discId) {
         return commentRepository.findAllCommentsByDiscussionID(discId);
+    }
+
+    @Override
+    public Discussions saveDiscussion(Discussions discussion) {
+//        try {
+////            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+////            java.util.Date date = sdf.parse(discussion.getTimestamp());
+////            java.sql.Date sqlDate = new Date(date.getTime());
+////            System.out.println(sqlDate);
+////            discussion.setTimestamp(sqlDate);
+//        }catch (Exception e) {
+//            System.out.println(e);
+//        }
+        return discussionRepository.save(discussion);
     }
 }

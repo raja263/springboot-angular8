@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-    if(this.userService.currentUserValue){
+    if (this.userService.currentUserValue){
       this.router.navigate(['/home']);
       return;
     }
@@ -25,8 +25,8 @@ export class RegisterComponent implements OnInit {
   register(){
     this.userService.register(this.user).subscribe(data => {
       this.router.navigate(['/login']);
-    },err => {
-      this.errorMessage = "Username is already exist";
+    }, err => {
+      this.errorMessage = 'Username already exists';
     });
   }
 

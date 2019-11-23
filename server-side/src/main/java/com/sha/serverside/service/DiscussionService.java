@@ -10,4 +10,6 @@ public interface DiscussionService {
     List<Discussions> getAllDiscussions();
     Discussions findByDiscussionID(Long discId);
     List<Comments> findAllCommentsByDiscussionID(Long discId);
+
+    Discussions saveDiscussion(Discussions discussion);
 }
