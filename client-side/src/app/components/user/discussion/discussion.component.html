@@ -21,37 +21,20 @@
   </form>
   <br>
 
-
+  <!-- Comments -->
   <div style="border:1px; border-style:solid; border-color:#e9e9e9; padding: 1em;">
-
     <h6>Comments:</h6>
-
     <div class="card-body">
       <table class="table table-striped">
-        <!--
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Topic</th>
-          <th scope="col">Posted By</th>
-          <th scope="col">Posted On</th>
-          <th scope="col"> </th>
-        </tr>
-        </thead>
-        -->
         <tbody>
-
         <tr *ngFor="let item of commentContent;  index as ind">
           <td>{{item.userID}} says:</td>
           <td>" {{item.body}} "</td>
           <td>{{item.timestamp}}</td>
-
         </tr>
         </tbody>
-
       </table>
     </div>
-
   </div>
 
 </div>
