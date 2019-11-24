@@ -12,4 +12,6 @@ public interface DiscussionService {
     List<Comments> findAllCommentsByDiscussionID(Long discId);
 
     Discussions saveDiscussion(Discussions discussion);
+
+    Comments saveComment(Comments comment);
 }

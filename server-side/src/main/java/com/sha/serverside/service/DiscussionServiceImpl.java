@@ -7,7 +7,6 @@ import com.sha.serverside.repository.DiscussionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -44,5 +43,10 @@ public class DiscussionServiceImpl implements DiscussionService{
 //            System.out.println(e);
 //        }
         return discussionRepository.save(discussion);
+    }
+
+    @Override
+    public Comments saveComment(Comments comment){
+        return commentRepository.save(comment);
     }
 }

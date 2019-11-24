@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -25,9 +26,5 @@ public class Comments implements Serializable {
     private String body;
 
     @Column(name="timestamp")
-    private String timestamp;
-
-    //@ManyToOne(fetch = FetchType.EAGER)
-    //@JoinColumn(name="instructor_id", referencedColumnName = "id")
-    //private User instructor;
+    private Timestamp timestamp;
 }

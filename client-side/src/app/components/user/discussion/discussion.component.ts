@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from "../../../models/user";
 import {Course} from "../../../models/course";
 import {Discussions} from "../../../models/discussions";
+import {Comments} from "../../../models/comments";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from '../../../services/user.service';
 // ----------------------------------------------------------------------------------------------------------------- DISCUSSION CONTENT PAGE
@@ -14,9 +15,10 @@ export class DiscussionComponent implements OnInit {
 
   currentStudent: User;
   discussionContent: any;
-  commentContent: any;
+  commentContent: Comments;
   currentDiscussion: Discussions;
   private discussionID: string;
+  commentInput: string;
 
 
   constructor(private route: ActivatedRoute, private userService: UserService) {
@@ -44,6 +46,29 @@ export class DiscussionComponent implements OnInit {
       this.discussionContent = data;
     });
   }
+
+  submitComment(value: string) {
+
+    let comment = new Comments();
+    comment.discussionID = this.discussionID;
+    comment.userID = this.currentStudent.id;
+    comment.timestamp = Date.now();
+    comment.body = value;
+    // discuss.body = this.comm;
+    this.userService.submitComment(comment).subscribe(data => {
+      this.router.navigate(['/discussionhome']);
+    });
+  }
+
+
+  // test() {
+  //   let discuss = new Discussions();
+  //   discuss.discussionID = 88;
+  //   discuss.body = "hello raha";
+  //   this.userService.submitDiscussion(discuss).subscribe(data => {
+  //     this.router.navigate(['/discussionhome']);
+  //   });
+  // }
 
   private getComments() {
     this.userService.findCommentsByDiscussionID(this.discussionID).subscribe(data => {

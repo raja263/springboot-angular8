@@ -39,6 +39,11 @@ public class StudentController {
         return new ResponseEntity<>(discussionStudentService.saveDiscussion(discussion), HttpStatus.CREATED);
     }
 
+    @PostMapping("/api/user/discussion/comment/")
+    public ResponseEntity<?> submitComment(@RequestBody Comments comment){
+        return new ResponseEntity<>(discussionStudentService.saveComment(comment), HttpStatus.CREATED);
+    }
+
     @GetMapping("/api/user/discussions")
     public ResponseEntity<?> getAllDiscussions(){
             List<Discussions> discussionsList =

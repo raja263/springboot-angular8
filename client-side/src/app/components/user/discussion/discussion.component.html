@@ -16,10 +16,19 @@
 
   <hr>
   <form>
+    <input type="text"  placeholder="Say something here..." #cbody [(ngModel)]="commentInput" required/>
+    <button type="button" (click)="submitComment(cbody.value)">Post Comment</button>
+  </form>
+  <br>
+
+<!--
+  <hr>
+  <form>
     <input type="text" name="commentInput" placeholder="Say something here..." />
     <button type="button">Post Comment</button>
   </form>
   <br>
+-->
 
   <!-- Comments -->
   <div style="border:1px; border-style:solid; border-color:#e9e9e9; padding: 1em;">
