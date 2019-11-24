@@ -6,7 +6,8 @@
   <hr>
   <br>
 
-  <h5>{{discussionContent.title}}</h5>
+  <h5>{{discussionContent.title}}<button  style="float: right;">Delete</button></h5>
+
   <br>
  <p style="border:1px; border-style:solid; border-color:#cfcfcf; padding: 1em;">{{discussionContent.body}}</p>
  posted by {{discussionContent.userID}}
@@ -40,6 +41,7 @@
           <td>{{item.userID}} says:</td>
           <td>" {{item.body}} "</td>
           <td>{{item.timestamp}}</td>
+          <td><button  style="float: right;">Delete</button></td>
         </tr>
         </tbody>
       </table>

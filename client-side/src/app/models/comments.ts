@@ -1,5 +1,5 @@
 export class Comments {
-  discussionID: number;
+  discussionID: string;
   commentID: number;
   body: string="";
   timestamp: number;

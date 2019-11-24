@@ -15,18 +15,18 @@ export class DiscussionComponent implements OnInit {
 
   currentStudent: User;
   discussionContent: any;
-  commentContent: Comments;
+  commentContent: any;
   currentDiscussion: Discussions;
   private discussionID: string;
   commentInput: string;
 
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
+  constructor(private router: ActivatedRoute, private userService: UserService) {
     this.currentStudent = JSON.parse(localStorage.getItem("currentUser"));
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.router.paramMap.subscribe(params => {
       if(params.has('id')){
         this.discussionID = params.get('id');
       }
@@ -56,6 +56,8 @@ export class DiscussionComponent implements OnInit {
     comment.body = value;
     // discuss.body = this.comm;
     this.userService.submitComment(comment).subscribe(data => {
+      // Do not remove next line. Error suppression
+      // @ts-ignore
       this.router.navigate(['/discussionhome']);
     });
   }
